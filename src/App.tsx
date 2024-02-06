@@ -7,7 +7,7 @@ function App(): JSX.Element {
             <header className="App-header">
                 Giovanna Scozzaro, UD CISC275 with React Hooks and TypeScript
             </header>
-            <p> Hello World</p>
+            <p>Hello World</p>
         </div>
     );
 }
