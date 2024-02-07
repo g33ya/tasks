@@ -15,7 +15,7 @@
 
 .App-header {
     width: 100%;
-    background-color: #282c34;
+    background-color: #174b5b;
     min-height: 40vh;
     display: flex;
     flex-direction: column;
@@ -36,4 +36,18 @@
     to {
         transform: rotate(360deg);
     }
+}
+
+.Rectangles {
+    width: 90%;
+    height: 60%;
+    background-color: red;
+}
+
+ol {
+    list-style: inside;
+}
+
+ul {
+    list-style: inside;
 }
