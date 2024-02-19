@@ -28,7 +28,10 @@ export function tripleNumbers(numbers: number[]): number[] {
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
-    return [];
+    const toInteger = numbers.map((num: string): number =>
+        !Number.isNaN(Number(num)) ? Number(num) : 0
+    );
+    return toInteger;
 }
 
 /**
@@ -90,4 +93,7 @@ export function makeMath(addends: number[]): string {
  */
 export function injectPositive(values: number[]): number[] {
     return [];
+}
+function num(value: string, index: number, array: string[]): unknown {
+    throw new Error("Function not implemented.");
 }
