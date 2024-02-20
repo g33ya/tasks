@@ -153,6 +153,8 @@ export function injectPositive(values: number[]): number[] {
     ];
 }
 
-function num(value: string, index: number, array: string[]): unknown {
+/*
+function num(index: number, array: string[]): unknown {
     throw new Error("Function not implemented.");
 }
+*/
