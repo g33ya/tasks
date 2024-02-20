@@ -145,8 +145,12 @@ export function injectPositive(values: number[]): number[] {
         (total: number, value: number) => total + value,
         0
     );
-    values.splice(negIndex + 1, 0, sum);
-    return values;
+
+    return [
+        ...values.slice(0, negIndex + 1),
+        sum,
+        ...values.slice(negIndex + 1)
+    ];
 }
 function num(value: string, index: number, array: string[]): unknown {
     throw new Error("Function not implemented.");
