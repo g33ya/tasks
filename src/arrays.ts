@@ -130,7 +130,23 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    const negIndex = values.findIndex((value: number): boolean => value < 0);
+
+    if (negIndex === -1) {
+        const sum = values.reduce(
+            (total: number, value: number) => total + value,
+            0
+        );
+        return [...values, sum];
+    }
+
+    const numsToAdd = values.slice(0, negIndex);
+    const sum = numsToAdd.reduce(
+        (total: number, value: number) => total + value,
+        0
+    );
+    values.splice(negIndex + 1, 0, sum);
+    return values;
 }
 function num(value: string, index: number, array: string[]): unknown {
     throw new Error("Function not implemented.");
