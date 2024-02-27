@@ -58,8 +58,8 @@ export function isValid(question: Question, answer: string): boolean {
         if (sum === 1) {
             return true;
         }
-        return false;
     }
+    return false;
 }
 
 /**
@@ -69,7 +69,12 @@ export function isValid(question: Question, answer: string): boolean {
  * name "My First Question" would become "9: My First Q".
  */
 export function toShortForm(question: Question): string {
-    return "";
+    let nameString = "";
+    let i = 0;
+    for (i = 0; i < 10 && i < question.name.length; i++) {
+        nameString += question.name[i];
+    }
+    return question.id.toString() + ": " + nameString;
 }
 
 /**
