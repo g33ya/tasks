@@ -46,7 +46,20 @@ export function isCorrect(question: Question, answer: string): boolean {
  * be exactly one of the options.
  */
 export function isValid(question: Question, answer: string): boolean {
-    return false;
+    if (question.type === "short_answer_question") {
+        return true;
+    } else if (question.type === "multiple_choice_question") {
+        const sum = question.options.reduce(
+            (currentTotal: number, ans: string) =>
+                ans === answer ? (currentTotal += 1) : currentTotal,
+            0
+        );
+
+        if (sum === 1) {
+            return true;
+        }
+        return false;
+    }
 }
 
 /**
