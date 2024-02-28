@@ -114,7 +114,7 @@ id,name,options,points,published
  * Check the unit tests for more examples!
  */
 export function toCSV(questions: Question[]): string {
-    let startString = "id,name,options,points,published\n";
+    const startString = "id,name,options,points,published\n";
     const csv = questions
         .map(
             (question: Question): string =>
@@ -216,18 +216,20 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType
 ): Question[] {
-    const updatedQuestions = questions.map((question: Question) =>
-        question.id === targetId
-            ? {
-                  ...question,
-                  type: newQuestionType,
-                  options:
-                      newQuestionType !== "multiple_choice_question"
-                          ? []
-                          : question.options
-              }
-            : question
-    );
+    const updatedQuestions = questions.map((question: Question) => {
+        if (question.id === targetId) {
+            return {
+                ...question,
+                type: newQuestionType,
+                options:
+                    newQuestionType !== "multiple_choice_question"
+                        ? []
+                        : question.options
+            };
+        } else {
+            return question;
+        }
+    });
     return updatedQuestions;
 }
 
