@@ -74,6 +74,7 @@ export function toShortForm(question: Question): string {
             ? question.name.substring(0, 10)
             : question.name;
     return question.id + ": " + firstChars;
+    // no for loop!
 }
 
 /**
