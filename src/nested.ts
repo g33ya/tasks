@@ -288,21 +288,18 @@ export function duplicateQuestionInArray(
     targetId: number,
     newId: number
 ): Question[] {
-    /*
     const newArray = questions.map(
         (question: Question): Question => ({ ...question })
     );
-    const findTarget = newArray.find(
+
+    const targetIndex = newArray.findIndex(
         (question: Question): boolean => question.id === targetId
     );
 
-    const findTargetIndex = newArray.findIndex(
-        (question: Question): boolean => question.id === targetId
+    newArray.splice(
+        1 + targetIndex,
+        0,
+        duplicateQuestion(newId, questions[targetIndex])
     );
-
-    const duplicateTarget = duplicateQuestion(findTarget, newId);
-    newArray.splice(findTargetIndex + 1, 0, duplicateTarget);
-    
-    */
-    return questions;
+    return newArray;
 }
