@@ -16,9 +16,24 @@ export function StartAttempt(): JSX.Element {
         setProgress(false);
     }
 
-    function Mulligan(): void {
+    function mulligan(): void {
         setAttempt(1 + attempt);
     }
 
-    return <span></span>;
+    return (
+        <span>
+            <Button
+                onClick={() => startQuiz()}
+                disabled={progress || attempt === 0}
+            >
+                Start Quiz
+            </Button>
+            <Button onClick={() => stopQuiz()} disabled={progress}>
+                Stop Quiz
+            </Button>
+            <Button onClick={() => mulligan()} disabled={progress}>
+                Mulligan
+            </Button>
+        </span>
+    );
 }
