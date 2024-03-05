@@ -23,17 +23,20 @@ export function StartAttempt(): JSX.Element {
     return (
         <span>
             <Button
-                onClick={() => startQuiz()}
-                disabled={progress || attempt === 0}
+                onClick={startQuiz}
+                disabled={progress === true || attempt === 0}
             >
                 Start Quiz
             </Button>
-            <Button onClick={() => stopQuiz()} disabled={progress}>
+            <Button onClick={stopQuiz} disabled={progress === false}>
                 Stop Quiz
             </Button>
-            <Button onClick={() => mulligan()} disabled={progress}>
+            <Button onClick={mulligan} disabled={progress === true}>
                 Mulligan
             </Button>
+            <div>
+                Number of Attempts: <span> {attempt} </span>
+            </div>
         </span>
     );
 }
