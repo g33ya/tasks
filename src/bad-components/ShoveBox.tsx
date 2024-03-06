@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
+interface shoveBoxProps {
+    setPosiiton: (newPosition: number) => void;
+    position: number;
+}
 function ShoveBoxButton({
-    position,
-    setPosition
+    setPosition,
+    position
 }: {
     position: number;
     setPosition: (newPosition: number) => void;
