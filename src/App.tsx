@@ -2,6 +2,13 @@
 import React from "react";
 import "./App.css";
 
+import { RevealAnswer } from "./components/RevealAnswer";
+import { StartAttempt } from "./components/StartAttempt";
+import { TwoDice } from "./components/TwoDice";
+import { ChangeType } from "./components/ChangeType";
+import { CycleHoliday } from "./components/CycleHoliday";
+
+
 function App(): JSX.Element {
     return (
         <div className="App">
@@ -12,6 +19,16 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
+            <hr />
+            <RevealAnswer></RevealAnswer>
+            <hr />
+            <StartAttempt></StartAttempt>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <ChangeType></ChangeType>
+            <hr />
+            <CycleHoliday></CycleHoliday>
         </div>
     );
 }
