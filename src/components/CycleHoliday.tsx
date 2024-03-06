@@ -2,42 +2,40 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
 export function CycleHoliday(): JSX.Element {
-    type holiday =
-        | "Fourth of July"
-        | "Halloween"
-        | "Christmas"
-        | "Thanksgiving"
-        | "Easter";
+    type holiday = "🎆" | "🎃" | "🎄" | "🦃" | "🐇";
 
-    const [holiday, setHoliday] = useState<holiday>("Fourth of July");
+    const [holiday, setHoliday] = useState<holiday>("🎆");
 
     function holidaysAlphabetized(): void {
-        if (holiday === "Fourth of July") {
-            setHoliday("Halloween");
-        } else if (holiday === "Halloween") {
-            setHoliday("Thanksgiving");
-        } else if (holiday === "Thanksgiving") {
-            setHoliday("Christmas");
-        } else if (holiday === "Christmas") {
-            setHoliday("Easter");
-        } else if (holiday === "Easter") {
-            setHoliday("Fourth of July");
+        if (holiday === "🎆") {
+            setHoliday("🎃");
+        } else if (holiday === "🎃") {
+            setHoliday("🦃");
+        } else if (holiday === "🦃") {
+            setHoliday("🎄");
+        } else if (holiday === "🎄") {
+            setHoliday("🐇");
+        } else if (holiday === "🐇") {
+            setHoliday("🎆");
         }
     }
 
     function byDate(): void {
-        if (holiday === "Fourth of July") {
-            setHoliday("Halloween");
-        } else if (holiday === "Halloween") {
-            setHoliday("Thanksgiving");
-        } else if (holiday === "Thanksgiving") {
-            setHoliday("Christmas");
-        } else if (holiday === "Christmas") {
-            setHoliday("Easter");
-        } else if (holiday === "Easter") {
-            setHoliday("Fourth of July");
+        if (holiday === "🎆") {
+            setHoliday("🎃");
+        } else if (holiday === "🎃") {
+            setHoliday("🦃");
+        } else if (holiday === "🦃") {
+            setHoliday("🎄");
+        } else if (holiday === "🎄") {
+            setHoliday("🐇");
+        } else if (holiday === "🐇") {
+            setHoliday("🎆");
         }
     }
 
+    <div>
+        <span>Holiday: {toEmoji()}</span>;
+    </div>;
     return <div>Cycle Holiday</div>;
 }
