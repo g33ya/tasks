@@ -34,13 +34,16 @@ export function ShoveBox(): JSX.Element {
     return (
         <div>
             <h3>Shove Box</h3>
-            <span>The box is at: {box.position}</span>
+            <span>The box is at: {position}</span>
             <div>
                 <ShoveBoxButton
-                    position={box.position}
-                    setPosition={box.setPosition}
+                    position={position}
+                    setPosition={setPosition}
                 ></ShoveBoxButton>
-                {box}
+                <MoveableBox
+                    position={position}
+                    setPosition={setPosition}
+                ></MoveableBox>
             </div>
         </div>
     );
