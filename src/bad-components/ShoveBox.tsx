@@ -2,16 +2,10 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
 interface shoveBoxProps {
-    setPosiiton: (newPosition: number) => void;
-    position: number;
-}
-function ShoveBoxButton({
-    setPosition,
-    position
-}: {
     position: number;
     setPosition: (newPosition: number) => void;
-}) {
+}
+function ShoveBoxButton({ position, setPosition }: shoveBoxProps) {
     return (
         <Button onClick={() => setPosition(4 + position)}>Shove the Box</Button>
     );
