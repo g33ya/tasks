@@ -6,19 +6,16 @@ import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
 import { ChangeType } from "./components/ChangeType";
 import { CycleHoliday } from "./components/CycleHoliday";
-
 function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
                 Giovanna Scozzaro | UD CISC275 with React Hooks and TypeScript
             </header>
-
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload. Please work!
             </p>
-
             <hr />
             <RevealAnswer></RevealAnswer>
             <hr />
