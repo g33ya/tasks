@@ -18,6 +18,7 @@ export function ChooseTeam(): JSX.Element {
         if (!team.includes(person)) {
             const updateTeam = [...team, person];
             setTeam(updateTeam);
+            setAllOptions(allOptions);
         }
     }
 
