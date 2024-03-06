@@ -7,8 +7,6 @@ import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
 import { ChangeType } from "./components/ChangeType";
 import { CycleHoliday } from "./components/CycleHoliday";
-
-
 function App(): JSX.Element {
     return (
         <div className="App">
@@ -32,5 +30,4 @@ function App(): JSX.Element {
         </div>
     );
 }
-
 export default App;
