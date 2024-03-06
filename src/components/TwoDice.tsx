@@ -30,7 +30,7 @@ export function TwoDice(): JSX.Element {
             <Button onClick={rollRightDie}>Roll Right</Button>
             <span data-testid="right-die">{rightDie}</span>
             {leftDie === 1 && rightDie === 1 && <div>You Lose!</div>}
-            {leftDie === rightDie && leftDie !== 1 && <div>You Win!</div>}
+            {leftDie === rightDie && leftDie !== 1 && <div>You Win!!</div>}
         </div>
     );
     return <div>Two Dice</div>;
