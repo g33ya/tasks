@@ -6,10 +6,10 @@ export function StartAttempt(): JSX.Element {
     const [progress, setProgress] = useState<boolean>(false);
 
     function startQuiz(): void {
-        if (attempt > 0) {
-            setProgress(true);
-            setAttempt(attempt - 1);
-        }
+        //if (attempt > 0) {
+        setProgress(true);
+        setAttempt(attempt - 1);
+        // }
     }
 
     function stopQuiz(): void {
@@ -36,6 +36,9 @@ export function StartAttempt(): JSX.Element {
             </Button>
             <div>
                 Number of Attempts: <span> {attempt} </span>
+            </div>
+            <div>
+                In Progress: <span> {progress} </span>
             </div>
         </span>
     );
