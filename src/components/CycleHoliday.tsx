@@ -33,9 +33,11 @@ export function CycleHoliday(): JSX.Element {
             setHoliday("🎆");
         }
     }
-
     <div>
-        <span>Holiday: {toEmoji()}</span>;
+        <div>
+            <span>Holiday: {holiday}</span>;
+        </div>
+        <Button onClick={holidaysAlphabetized}>Advance by Alphabet</Button>;
+        <Button onClick={byDate}>Advance by Date</Button>;
     </div>;
-    return <div>Cycle Holiday</div>;
 }
