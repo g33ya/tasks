@@ -42,4 +42,5 @@ export function CycleHoliday(): JSX.Element {
             <Button onClick={byDate}>Advance by Year</Button>
         </div>
     );
+    return <div>Cycle Holiday</div>;
 }

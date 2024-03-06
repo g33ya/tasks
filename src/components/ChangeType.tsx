@@ -20,4 +20,5 @@ export function ChangeType(): JSX.Element {
             {type === "short_answer_question" && <div>Short Answer</div>}
         </div>
     );
+    return <div>Change Type</div>;
 }

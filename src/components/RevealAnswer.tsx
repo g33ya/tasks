@@ -14,4 +14,5 @@ export function RevealAnswer(): JSX.Element {
             {visible && <div>42</div>}
         </div>
     );
+    return <div>Reveal Answer</div>;
 }
