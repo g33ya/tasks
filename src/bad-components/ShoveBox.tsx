@@ -5,14 +5,14 @@ interface shoveBoxProps {
     position: number;
     setPosition: (newPosition: number) => void;
 }
+
 function ShoveBoxButton({ position, setPosition }: shoveBoxProps) {
     return (
         <Button onClick={() => setPosition(4 + position)}>Shove the Box</Button>
     );
 }
 
-function MoveableBox(): JSX.Element {
-    const [position, setPosition] = useState<number>(10);
+function MoveableBox({ position }: shoveBoxProps): JSX.Element {
     return (
         <div
             data-testid="moveable-box"
