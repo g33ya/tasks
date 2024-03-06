@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import "./App.css";
+
 import { RevealAnswer } from "./components/RevealAnswer";
 import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
@@ -29,5 +30,4 @@ function App(): JSX.Element {
         </div>
     );
 }
-
 export default App;
