@@ -16,8 +16,11 @@ export function MultipleChoiceQuestion({
     }
     return (
         <div>
+            <h3>Multiple Choice Questions</h3>
             <Form.Group controlId="multipleChoice">
-                <Form.Label>How do you feel?</Form.Label>
+                <Form.Label>
+                    Select an answer from the dropdown below!
+                </Form.Label>
                 <Form.Select value={currentChoice} onChange={updateChoice}>
                     {options.map((option) => (
                         <option key={option} value={option}>
