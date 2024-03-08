@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import { Form } from "react-bootstrap";
 
 export function EditMode(): JSX.Element {
     const [isHappy, setIsHappy] = useState<boolean>(true);
+    const [editMode, setEditMode] = useState<boolean>(false);
+    const [userName, setUserName] = useState<string>("Your Name");
+    const [isStudent, setStudent] = useState<boolean>(true);
 
-    // This is the Control
+    // THIS WILL BE FOR EDITMODE
     function updateHappiness(event: React.ChangeEvent<HTMLInputElement>) {
         setIsHappy(event.target.checked);
     }
@@ -16,7 +20,7 @@ export function EditMode(): JSX.Element {
                 checked={isHappy}
                 onChange={updateHappiness}
             />
-            <div>The user is {isHappy ? "happy" : "not happy"}.</div>
+            <div>The user is {isStudent ? "a student" : "not a student"}.</div>
         </div>
     );
 }
