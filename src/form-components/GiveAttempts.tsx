@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
 export function GiveAttempts(): JSX.Element {
     const [attemptsLeft, setAttemptsLeft] = useState<number>(3);
     const [attemptRequest, setAttemptRequest] = useState<string>("");
-    const attemptRequest = parseInt(attemptRequest) || 0;
+    const requestNum = parseInt(attemptRequest) || 0;
     return (
         <div>
             <h3>Give Attempts</h3>
@@ -16,9 +16,17 @@ export function GiveAttempts(): JSX.Element {
                         value={attemptRequest}
                         onChange={(
                             event: React.ChangeEvent<HTMLInputElement>
-                        ) => setAttemptRequest(attemptRequest)}
+                        ) => setAttemptRequest(event.target.value)}
                     />
                 </Form.Group>
+            </div>
+            <div>
+                <Button
+                    onClick={() => setAttemptsLeft(attemptsLeft - 1)}
+                    disabled={attemptsLeft === 0}
+                >
+                    use
+                </Button>
             </div>
         </div>
     );
