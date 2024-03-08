@@ -13,6 +13,7 @@ export function ChangeColor(): JSX.Element {
     // This is the View
     return (
         <div>
+            <h3>Change Color</h3>
             <Form.Check
                 type="radio"
                 name="colors"

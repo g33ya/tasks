@@ -25,6 +25,9 @@ export function TwoDice(): JSX.Element {
 
     return (
         <div>
+            <div>
+                <h3>Two Dice</h3>
+            </div>
             <Button onClick={rollLeftDie}>Roll Left</Button>
             <span data-testid="left-die">{leftDie}</span>
             <Button onClick={rollRightDie}>Roll Right</Button>
