@@ -16,7 +16,9 @@ export function GiveAttempts(): JSX.Element {
                         value={attemptRequest}
                         onChange={(
                             event: React.ChangeEvent<HTMLInputElement>
-                        ) => setAttemptRequest(event.target.value)}
+                        ) =>
+                            setAttemptRequest(parseInt(event.target.value) || 0)
+                        }
                     />
                 </Form.Group>
             </div>
@@ -35,6 +37,7 @@ export function GiveAttempts(): JSX.Element {
                     gain
                 </Button>
             </div>
+            <div>Attempts remaining: {attemptsLeft}</div>
         </div>
     );
 }
