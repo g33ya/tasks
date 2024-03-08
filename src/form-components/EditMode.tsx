@@ -2,25 +2,64 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
 export function EditMode(): JSX.Element {
-    const [isHappy, setIsHappy] = useState<boolean>(true);
     const [editMode, setEditMode] = useState<boolean>(false);
     const [userName, setUserName] = useState<string>("Your Name");
     const [isStudent, setStudent] = useState<boolean>(true);
 
     // THIS WILL BE FOR EDITMODE
-    function updateHappiness(event: React.ChangeEvent<HTMLInputElement>) {
-        setIsHappy(event.target.checked);
+    function editStudent(event: React.ChangeEvent<HTMLInputElement>) {
+        setStudent(event.target.checked);
     }
+
+    function editUserName(event: React.ChangeEvent<HTMLInputElement>) {
+        setUserName(event.target.value);
+    }
+
+    function switchEditMode() {
+        setEditMode(!editMode);
+    }
+
+    function switchStudentStatus() {
+        setStudent(!isStudent);
+    }
+
     return (
         <div>
-            <Form.Check
-                type="switch"
-                id="is-happy-check"
-                label="Happy?"
-                checked={isHappy}
-                onChange={updateHappiness}
-            />
-            <div>The user is {isStudent ? "a student" : "not a student"}.</div>
+            <div>
+                <Form.Check
+                    type="switch"
+                    id="is-student"
+                    label="Switch Edit Mode"
+                    checked={editMode}
+                    onChange={switchEditMode}
+                />
+            </div>
+            <div>
+                {editMode && (
+                    <Form.Check
+                        type="checkbox"
+                        id="is-happy-check"
+                        label="Are you a student?"
+                        checked={isStudent}
+                        onChange={switchStudentStatus}
+                    />
+                )}
+            </div>
+            <div>
+                {editMode && (
+                    <Form.Group controlId="userName">
+                        <Form.Label>Change user name:</Form.Label>
+                        <Form.Control
+                            type="text"
+                            value={userName}
+                            onChange={editUserName}
+                        />
+                    </Form.Group>
+                )}
+            </div>
+            <div>
+                {userName} is {isStudent ? "a student" : "not a student"}.
+            </div>
         </div>
     );
 }
