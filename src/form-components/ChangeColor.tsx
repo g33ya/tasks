@@ -53,6 +53,46 @@ export function ChangeColor(): JSX.Element {
                 checked={color === "orange"}
                 inline
             />
+            <Form.Check
+                type="radio"
+                name="colors"
+                onChange={updateColor}
+                id="color-check-purple"
+                label="purple"
+                value="purple"
+                checked={color === "purple"}
+                inline
+            />
+            <Form.Check
+                type="radio"
+                name="colors"
+                onChange={updateColor}
+                id="color-check-pink"
+                label="pink"
+                value="pink"
+                checked={color === "pink"}
+                inline
+            />
+            <Form.Check
+                type="radio"
+                name="colors"
+                onChange={updateColor}
+                id="color-check-cyan"
+                label="cyan"
+                value="cyan"
+                checked={color === "cyan"}
+                inline
+            />
+            <Form.Check
+                type="radio"
+                name="colors"
+                onChange={updateColor}
+                id="color-check-yellow"
+                label="yellow"
+                value="yellow"
+                checked={color === "yellow"}
+                inline
+            />
             <div>
                 You have chosen{" "}
                 <div
