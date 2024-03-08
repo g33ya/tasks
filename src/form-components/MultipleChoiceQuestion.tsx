@@ -19,9 +19,11 @@ export function MultipleChoiceQuestion({
             <Form.Group controlId="multipleChoice">
                 <Form.Label>How do you feel?</Form.Label>
                 <Form.Select value={currentChoice} onChange={updateChoice}>
-                    <option value="happy">Happy</option>
-                    <option value="sad">Sad</option>
-                    <option value="angry">Angry</option>
+                    {options.map((option) => (
+                        <option key={option} value={option}>
+                            {option}
+                        </option>
+                    ))}
                 </Form.Select>
             </Form.Group>
             The user is feeling {currentChoice}.
