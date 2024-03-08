@@ -26,7 +26,8 @@ export function MultipleChoiceQuestion({
                     ))}
                 </Form.Select>
             </Form.Group>
-            The user is feeling {currentChoice}.
+            {expectedAnswer === currentChoice && <div>✔️</div>}
+            {expectedAnswer !== currentChoice && <div>❌</div>}
         </div>
     );
 }
