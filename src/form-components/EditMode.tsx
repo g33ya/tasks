@@ -6,11 +6,6 @@ export function EditMode(): JSX.Element {
     const [userName, setUserName] = useState<string>("Your Name");
     const [isStudent, setStudent] = useState<boolean>(true);
 
-    // THIS WILL BE FOR EDITMODE
-    function editStudent(event: React.ChangeEvent<HTMLInputElement>) {
-        setStudent(event.target.checked);
-    }
-
     function editUserName(event: React.ChangeEvent<HTMLInputElement>) {
         setUserName(event.target.value);
     }
